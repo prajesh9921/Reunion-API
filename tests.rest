@@ -1,0 +1,194 @@
+
+// Local Test Cases -----------------------------------------------------------------
+
+// Get all users
+GET http://localhost:9000/user/api/all_users
+Content-Type: application/json
+
+###
+// SignUp 
+POST http://localhost:9000/user/api/signup
+Content-Type: application/json
+
+{
+    "email":"gawhale.gmail.com",
+    "password":"9921"
+}
+
+###
+// Sign IN
+POST http://localhost:9000/user/api/signin
+Content-Type: application/json
+
+###
+// Delete User
+DELETE  http://localhost:9000/user/api/delete/63c7ae7dc329a4118e19d59c
+Content-Type: application/json
+
+###
+// Get all posts
+GET http://localhost:9000/posts/api/all_posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Get post by its ID
+GET http://localhost:9000/posts/api/post/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+//Create Post
+POST http://localhost:9000/posts/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+{
+    "title":"Testing API I",
+    "desc":"hi there",
+    "comments":["dsfs","Dfsfsdf"],
+    "likes": 56,
+    "follow":false
+}
+
+###
+// Follow Post
+PATCH http://localhost:9000/posts/api/follow/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Un Follow Post
+PATCH http://localhost:9000/posts/api/unfollow/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+
+###
+// Like post
+PATCH http://localhost:9000/posts/api/like/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Dislike Post
+PATCH http://localhost:9000/posts/api/unlike/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Add comment
+PATCH http://localhost:9000/posts/api/comment/63c7a4735630e8c1e21bbf69
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+{
+    "comments": [
+        "Added",
+        "Succeccedd"
+    ]
+}
+
+###
+// Delete post
+DELETE http://localhost:9000/posts/api/delete/63c7a4735630e8c1e21bbf69
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+
+
+//Production Tests ------------------------------------------------------------------------------
+
+###
+// Sign Up
+POST https://reunionprajeshsmapi.onrender.com/user/api/signup
+Content-Type: application/json
+
+{
+    "email":"gawhale.gmail.com",
+    "password":"9921"
+}
+
+###
+// Sign IN 
+POST https://reunionprajeshsmapi.onrender.com/user/api/signin
+Content-Type: application/json
+
+{
+    "email":"abcd.gmail.com",
+    "password":"9921"
+}
+
+###
+// Get all users
+GET https://reunionprajeshsmapi.onrender.com/user/api/all_users
+Content-Type: application/json 
+
+###
+// Delete User
+DELETE https://reunionprajeshsmapi.onrender.com/user/api/delete/63c7ae7dc329a4118e19d59c
+Content-Type: application/json
+
+###
+// Get all posts
+GET https://reunionprajeshsmapi.onrender.com/posts/api/all_posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Get post by its ID
+GET https://reunionprajeshsmapi.onrender.com/posts/api/post/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+//Create Post
+POST https://reunionprajeshsmapi.onrender.com/posts/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+{
+    "title":"Imagica",
+    "desc":"Theme park, water park",
+    "comments":["Awesome ride"],
+    "likes": 10,
+    "follow":false
+}
+
+# {
+#     "title":"Car show",
+#     "desc":"Vintage car show",
+#     "comments":["Mustang awesome","lit cars", "Love vintage cars"],
+#     "likes": 10,
+#     "follow":false
+# }
+
+###
+// Follow Post
+PATCH https://reunionprajeshsmapi.onrender.com/posts/api/follow/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Un Follow Post
+PATCH https://reunionprajeshsmapi.onrender.com/posts/api/unfollow/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Like post
+PATCH https://reunionprajeshsmapi.onrender.com/posts/api/like/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Dislike Post
+PATCH https://reunionprajeshsmapi.onrender.com/posts/api/unlike/63c7a3dc5630e8c1e21bbf64
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+###
+// Add comment
+PATCH https://reunionprajeshsmapi.onrender.com/posts/api/comment/63c7a4735630e8c1e21bbf69
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
+
+{
+    "comments": [
+        "Nice car",
+        "Broom broom"
+    ]
+}
+
+
+###
+// Delete post
+DELETE https://reunionprajeshsmapi.onrender.com/posts/api/delete/63c7a4735630e8c1e21bbf69
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2QuZ21haWwuY29tIiwiaWQiOiI2M2M3OWUxMWM3NzBmZDlmNWEyYzIzN2IiLCJpYXQiOjE2NzQwMjY1OTR9.HL-1LUBBi8s81VpMqCWUC5frGQHierWVaIG4cIcCQ6U
